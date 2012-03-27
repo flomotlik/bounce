@@ -1,0 +1,16 @@
+---
+id: 3c014ca0-5a51-012f-3a9b-123138132f99
+test:
+  commands:
+  - bundle install --without development production
+  - bundle exec rake db:schema:load
+  - bundle exec rake
+deploy:
+  branch: master
+  commands:
+  - gem install engineyard
+  - ey deploy
+ruby_versions:
+- 1.9.2
+engineyard:
+  api_token: 79870921e7ab540fad94f6f82169f836
